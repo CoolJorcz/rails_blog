@@ -1,0 +1,26 @@
+<div class="container">
+  <form action="/posts/<%= @post.id%>" method="post">
+    <div class="controls">
+      <label for="post_title">Title:</label>
+      <br>
+      <textarea id="post_title" name="post[title]" type="text">
+        <%= @post.try(:title) %>
+      </textarea>
+      <div class="controls">
+        <label for="post_body"><br>Post:<br><br>
+          <textarea rows="10" cols="50" id="post_body" name="post[body]" type="text"><%= @post.try(:body) %></textarea>
+        </div>
+        <div class="controls">
+          <label for="tags">Tags:</label>
+          <input id="tag_list" name="post[tag_list]" type="text" value="<%= @post.taggings %>">
+        </div>
+
+        <div class="controls">
+          <input type="submit">
+        </div>
+      </form>
+
+      <%= link_to "Delete Post", post_path(@post), :method => :delete %>
+
+    </div>
+    <a href="/">Back</a>

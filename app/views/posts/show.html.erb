@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="controls">
+    <p><%= @post.try(:title) %></p>
+    <br>
+    <p><%= @post.try(:body) %></p>
+    <br>
+    <p>Tags:</p>
+    <ul>
+    <% @post.tags.each do |tag| %>
+      <li><a href="/tags/<%=tag.name%>"><%= tag.name %></a></li>
+    <% end %>
+    </ul>
+<div><a href="/posts/<%= @post.id %>/edit">Edit</a></div> 
+
+<a href="/">Back</a>   
+
+

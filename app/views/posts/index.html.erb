@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Anonymouse Blog</h1>
+  <p>It's a mousy mouse world</p>
+<ul>
+  <% @posts.each do |post| %>
+  <li><a href="/posts/<%= post.id%>"><%= post.title %></a>
+      <p><%= post.body%></p>
+      <% end %>
+  </li>
+</ul>
+<a href="/posts/new">Create new post</a>
+</div>
